@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pond Guardians — charity: water Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="brand">
+      <div class="jerrycan" aria-hidden="true"></div>
+      <div class="brand-text">
+        <strong>charity: water</strong>
+        <span class="brand-sub">Clean water for all</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Global background decor -->
+  <div class="sky">
+    <div class="sun" aria-hidden="true"></div>
+    <div class="cloud c1" aria-hidden="true"></div>
+    <div class="cloud c2" aria-hidden="true"></div>
+    <div class="cloud c3" aria-hidden="true"></div>
+    <div class="birds" aria-hidden="true"></div>
+  </div>
+  <div class="side-grass left" aria-hidden="true"></div>
+  <div class="side-grass right" aria-hidden="true"></div>
+
+  <main class="game-wrapper" role="main">
+    <h1 class="game-title">Pond Guardians</h1>
+    <p class="game-tagline">Catch clean blue drops. Avoid pollutants. Keep the pond healthy!</p>
+
+    <section class="score-panel glass" aria-live="polite">
+      <div class="score">Score: <span id="score">0</span></div>
+      <div class="timer">Time: <span id="time">30</span>s</div>
+      <div class="controls">
+        <button id="start-btn" class="btn primary" aria-label="Start game">Start</button>
+        <button id="reset-btn" class="btn ghost" aria-label="Reset game" disabled>Reset</button>
+      </div>
+    </section>
+
+    <div class="message" id="message" aria-live="assertive"></div>
+
+    <!-- Playfield -->
+    <section id="game-container" aria-label="Gameplay area">
+      <div class="meter">
+        <span class="meter-label">💦 Water Clarity</span>
+        <div class="cleanliness-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+          <div id="meter-fill"></div>
+        </div>
+      </div>
+
+      <div class="hills" aria-hidden="true"></div>
+      <div class="pond" id="pond" aria-hidden="true">
+        <div class="pond-reflection"></div>
+        <div class="lilypad lp1"></div>
+        <div class="lilypad lp2"></div>
+        <div class="lilypad lp3"></div>
+        <div class="frog" aria-hidden="true">
+          <div class="eye left"></div>
+          <div class="eye right"></div>
+          <div class="mouth"></div>
+        </div>
+        <div class="reeds r1" aria-hidden="true"></div>
+        <div class="reeds r2" aria-hidden="true"></div>
+        <div class="flower f1" aria-hidden="true"></div>
+        <div class="flower f2" aria-hidden="true"></div>
+      </div>
+
+      <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+    </section>
+
+    <footer class="cta">
+      Learn more at <a href="https://www.charitywater.org" target="_blank" rel="noopener">charitywater.org</a>
+    </footer>
+  </main>
+
+  <!-- Sounds (optional; muted until user interacts) -->
+  <audio id="sound-bubble" src="assets/bubble.ogg" preload="auto"></audio>
+  <audio id="sound-bloop" src="assets/bloop.ogg" preload="auto"></audio>
+  <audio id="sound-sparkle" src="assets/sparkle.ogg" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
