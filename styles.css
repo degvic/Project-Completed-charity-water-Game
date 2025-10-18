@@ -56,7 +56,7 @@ body{
 
 .game-wrapper {
   width: min(100%, 980px);
-  margin: 0 auto; /* <— centers entire game */
+  margin: 0 auto;
   padding: 18px;
   display: flex;
   flex-direction: column;
@@ -78,7 +78,7 @@ body{
 }
 .glass{background:rgba(255,255,255,.68);backdrop-filter:blur(8px);box-shadow:0 12px 30px rgba(0,0,0,.10)}
 .score,.timer{font-weight:800;font-size:clamp(18px,2.5vw,22px)}
-.controls{display:flex;gap:10px}
+.controls{display:flex;gap:10px;align-items:center}
 .btn{border:none;cursor:pointer;padding:12px 18px;border-radius:999px;font-weight:700;transition:transform .1s ease, box-shadow .2s ease, opacity .2s}
 .btn.primary{background:linear-gradient(90deg,#FFC907,#2E9DF7);color:#fff;box-shadow:0 8px 18px rgba(46,157,247,.35)}
 .btn.ghost{background:transparent;border:2px solid #2E9DF7;color:#2E9DF7}
@@ -88,12 +88,27 @@ body{
 
 .message{min-height:26px;font-weight:700;color:var(--muted)}
 
-/* Playfield */
+/* Difficulty select (added) */
+.difficulty select{
+  appearance:none;
+  padding:10px 14px;
+  border-radius:999px;
+  border:2px solid var(--cw-blue);
+  font-weight:700;
+  background:#fff;
+}
+.visually-hidden{
+  position:absolute !important;
+  height:1px; width:1px;
+  overflow:hidden; clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;
+}
+
 #game-container {
   position: relative;
   width: 100%;
-  max-width: 860px;  /* <— constrain width */
-  margin: 0 auto;    /* <— center horizontally */
+  max-width: 860px;
+  margin: 0 auto;
   height: min(72vh, 720px);
   background: linear-gradient(180deg, #eaf8ff, #ffffff 44%);
   border-radius: 22px;
@@ -159,7 +174,7 @@ body{
   .pond{height:42%}
 }
 
-/* CTA fact line (added) */
+/* CTA fact line */
 .fact-line{
   font-size:.95rem;
   color:#4b5563;

@@ -39,6 +39,16 @@
       <div class="score">Score: <span id="score">0</span></div>
       <div class="timer">Time: <span id="time">30</span>s</div>
       <div class="controls">
+        <!-- Difficulty selector (added) -->
+        <div class="difficulty" aria-label="Select difficulty">
+          <label for="difficulty" class="visually-hidden">Difficulty</label>
+          <select id="difficulty" aria-label="Difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
         <button id="start-btn" class="btn primary" aria-label="Start game">Start</button>
         <button id="reset-btn" class="btn ghost" aria-label="Reset game" disabled>Reset</button>
       </div>
@@ -76,14 +86,17 @@
     </section>
 
     <footer class="cta">
-      Learn more at <a href="https://www.charitywater.org" target="_blank" rel="noopener">charitywater.org</a>
+      Learn more at <a href="https://www.charitywater.org" target="_blank" rel="noopener">charitywater.org</a> •
+      <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener">Donate</a>
     </footer>
   </main>
 
-  <!-- Sounds (optional; muted until user interacts) -->
+  <!-- Sounds -->
   <audio id="sound-bubble" src="assets/bubble.ogg" preload="auto"></audio>
   <audio id="sound-bloop" src="assets/bloop.ogg" preload="auto"></audio>
   <audio id="sound-sparkle" src="assets/sparkle.ogg" preload="auto"></audio>
+  <!-- Added: droplet sound provided by user -->
+  <audio id="sound-droplet" src="droplet.wav" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
